@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bg-image "
+        style=" background-size: cover; background-repeat: no-repeat; background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'); height: 100vh;">
+        <nav class="d-flex justify-content-between align-items-center col-12">
+            <h1 class="text-center display-2 text-light">Welcome {{user.first_name}}!!!</h1>
+            <div class="d-flex col-2 justify-content-around">
+                <a href="/dashboard" class="btn btn-outline-warning">Home</a>
+                <a href="/logout" class="btn btn-outline-warning">Logout</a>
+
+            </div>
+
+        </nav>
+        <form action="/update/workout" method="post" class="col-4  display-6 p-3 my-4 text-center mx-auto">
+            <h2 class="text-warning display-6">Update Workout</h2>
+            {% with messages = get_flashed_messages(category_filter=['workout']) %}
+            {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                <strong>Flash AHHHHHHH!!!!</strong>
+                {% for message in messages %}
+                <p>{{message}}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+
+
+            <div class="text-light ">
+                <input type="hidden" name="id" value={{edit.id}}>
+                <div class="form-group text-center">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" class="form-control" value="{{edit.name}}">
+                </div>
+                <div class="form-group" style="text-align: center;">
+                    <label for="description">Description:</label>
+                    <textarea name="description" cols="30" rows="5" class="form-control">{{edit.description}}</textarea>
+                </div>
+
+                <div style="text-align: center; margin: 2px;">
+                    <label for="compound_lift">Compound Lift:</label>
+                    <select name="compound_lift">
+                        <option value="{{edit.compound_lift}}">{{edit.compound_lift}}</option>
+                        <option value="Bench">Bench</option>
+                        <option value="Squat">Squat</option>
+                        <option value="Deadlift">Deadlift</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+                <div style="text-align: center; margin: 2px;">
+                    <label for="compound_lift2">Compound Lift:</label>
+                    <select name="compound_lift2">
+                        <option value="{{edit.compound_lift2}}">{{edit.compound_lift2}}</option>
+                        <option value="Bench">Bench</option>
+                        <option value="Squat">Squat</option>
+                        <option value="Deadlift">Deadlift</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+                <label for="compound_lift3">Compound Lift:</label>
+                <select name="compound_lift3">
+                    <option value="{{edit.compound_lift3}}">{{edit.compound_lift3}}</option>
+                    <option value="Bench">Bench</option>
+                    <option value="Squat">Squat</option>
+                    <option value="Deadlift">Deadlift</option>
+                    <option value="none">None</option>
+                </select>
+
+                <div style="margin: 2px;">
+                    <label for="accessory">Accessory:</label>
+                    <select name="accessory">
+                        <option value="{{edit.accessory}}">{{edit.accessory}}</option>
+                        <option value="Curl">Curl</option>
+                        <option value="Overhead_press">Overhead Press</option>
+                        <option value="Pullups">Pullups</option>
+                        <option value="Bent_over_rows">Bent Over Rows</option>
+                        <option value="Pushups">Pushups</option>
+                    </select>
+                </div>
+                <div style="margin: 2px; ">
+                    <label for="accessory2">Accessory:</label>
+                    <select name="accessory2">
+                        <option value="{{edit.accessory2}}">{{edit.accessory2}}</option>
+                        <option value="Curl">Curl</option>
+                        <option value="Overhead_press">Overhead Press</option>
+                        <option value="Pullups">Pullups</option>
+                        <option value="Bent_over_rows">Bent Over Rows</option>
+                        <option value="Pushups">Pushups</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="accessory3">Accessory:</label>
+                    <select name="accessory3">
+                        <option value="{{edit.accessory3}}">{{edit.accessory3}}</option>
+                        <option value="Curl">Curl</option>
+                        <option value="Overhead_press">Overhead Press</option>
+                        <option value="Pullups">Pullups</option>
+                        <option value="Bent_over_rows">Bent Over Rows</option>
+                        <option value="Pushups">Pushups</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Edit Workout" class="btn btn-outline-warning ">
+            </div>
+
+
+    </div>
+
+
+    </div>
+
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
