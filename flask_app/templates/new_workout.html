@@ -18,7 +18,7 @@
         <nav class="d-flex justify-content-between align-items-center col-12">
             <h1 class="text-center display-2 text-light">Welcome {{user.first_name}}!!!</h1>
             <div class="d-flex col-2 justify-content-around">
-                <a href="/dashboard" class="btn btn-outline-warning">Dashboard</a>
+                <a href="/dashboard" class="btn btn-outline-warning">Home</a>
                 <a href="/logout" class="btn btn-outline-warning">Logout</a>
 
             </div>
@@ -38,7 +38,7 @@
             {% endwith %}
 
 
-            <div class="text-light ">
+            <div class="text-light">
                 <div class="form-group text-center">
                     <label for="name">Name:</label>
                     <input type="text" name="name" class="form-control">
@@ -73,6 +73,7 @@
                     <option value="Deadlift">Deadlift</option>
                     <option value="none">None</option>
                 </select>
+
 
                 <div style="margin: 2px;">
                     <label for="accessory">Accessory:</label>
