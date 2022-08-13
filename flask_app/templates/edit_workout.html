@@ -24,7 +24,7 @@
             </div>
 
         </nav>
-        <form action="/update/workout" method="post" class="col-4  display-6 p-3 my-4 text-center mx-auto">
+        <form action="/update/workout" method="post" class=" display-6 p-3 my-4 text-center mx-auto">
             <h2 class="text-warning display-6">Update Workout</h2>
             {% with messages = get_flashed_messages(category_filter=['workout']) %}
             {% if messages %}
@@ -40,76 +40,80 @@
 
             <div class="text-light ">
                 <input type="hidden" name="id" value={{edit.id}}>
-                <div class="form-group text-center">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" class="form-control" value="{{edit.name}}">
-                </div>
-                <div class="form-group" style="text-align: center;">
-                    <label for="description">Description:</label>
-                    <textarea name="description" cols="30" rows="5" class="form-control">{{edit.description}}</textarea>
-                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group text-center">
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+                        <div class="form-group" style="text-align: center;">
+                            <label for="description">Description:</label>
+                            <textarea name="description" cols="30" rows="5" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class=" shadow p-3 mb-2  rounded" style="text-align: center; margin: 2px;">
+                            <label for="compound_lift">Compound Lift:</label>
+                            <select class="rounded" name="compound_lift">
+                                <option value="Bench">Bench</option>
+                                <option value="Squat">Squat</option>
+                                <option value="Deadlift">Deadlift</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
 
-                <div style="text-align: center; margin: 2px;">
-                    <label for="compound_lift">Compound Lift:</label>
-                    <select name="compound_lift">
-                        <option value="{{edit.compound_lift}}">{{edit.compound_lift}}</option>
-                        <option value="Bench">Bench</option>
-                        <option value="Squat">Squat</option>
-                        <option value="Deadlift">Deadlift</option>
-                        <option value="none">None</option>
-                    </select>
-                </div>
-                <div style="text-align: center; margin: 2px;">
-                    <label for="compound_lift2">Compound Lift:</label>
-                    <select name="compound_lift2">
-                        <option value="{{edit.compound_lift2}}">{{edit.compound_lift2}}</option>
-                        <option value="Bench">Bench</option>
-                        <option value="Squat">Squat</option>
-                        <option value="Deadlift">Deadlift</option>
-                        <option value="none">None</option>
-                    </select>
-                </div>
-                <label for="compound_lift3">Compound Lift:</label>
-                <select name="compound_lift3">
-                    <option value="{{edit.compound_lift3}}">{{edit.compound_lift3}}</option>
-                    <option value="Bench">Bench</option>
-                    <option value="Squat">Squat</option>
-                    <option value="Deadlift">Deadlift</option>
-                    <option value="none">None</option>
-                </select>
-
-                <div style="margin: 2px;">
-                    <label for="accessory">Accessory:</label>
-                    <select name="accessory">
-                        <option value="{{edit.accessory}}">{{edit.accessory}}</option>
-                        <option value="Curl">Curl</option>
-                        <option value="Overhead_press">Overhead Press</option>
-                        <option value="Pullups">Pullups</option>
-                        <option value="Bent_over_rows">Bent Over Rows</option>
-                        <option value="Pushups">Pushups</option>
-                    </select>
-                </div>
-                <div style="margin: 2px; ">
-                    <label for="accessory2">Accessory:</label>
-                    <select name="accessory2">
-                        <option value="{{edit.accessory2}}">{{edit.accessory2}}</option>
-                        <option value="Curl">Curl</option>
-                        <option value="Overhead_press">Overhead Press</option>
-                        <option value="Pullups">Pullups</option>
-                        <option value="Bent_over_rows">Bent Over Rows</option>
-                        <option value="Pushups">Pushups</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="accessory3">Accessory:</label>
-                    <select name="accessory3">
-                        <option value="{{edit.accessory3}}">{{edit.accessory3}}</option>
-                        <option value="Curl">Curl</option>
-                        <option value="Overhead_press">Overhead Press</option>
-                        <option value="Pullups">Pullups</option>
-                        <option value="Bent_over_rows">Bent Over Rows</option>
-                        <option value="Pushups">Pushups</option>
-                    </select>
+                        <div class="shadow p-3 mb-2  rounded" class="shadow p-3 mb-5  rounded"
+                            style="text-align: center; margin: 2px;">
+                            <label for="compound_lift2">Compound Lift:</label>
+                            <select class="rounded" name="compound_lift2">
+                                <option value="Bench">Bench</option>
+                                <option value="Squat">Squat</option>
+                                <option value="Deadlift">Deadlift</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                        <div class="shadow p-3 mb-2  rounded" style="text-align: center; margin: 2px;">
+                            <label for="compound_lift3">Compound Lift:</label>
+                            <select class="rounded" name="compound_lift3">
+                                <option value="Bench">Bench</option>
+                                <option value="Squat">Squat</option>
+                                <option value="Deadlift">Deadlift</option>
+                                <option value="none">None</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="shadow p-3 mb-2  rounded" style="margin: 2px;">
+                            <label for="accessory">Accessory:</label>
+                            <select class="rounded" name="accessory">
+                                <option value="curl">Curl</option>
+                                <option value="overhead_press">Overhead Press</option>
+                                <option value="Pullups">Pullups</option>
+                                <option value="Bent_over_rows">Bent Over Rows</option>
+                                <option value="Pushups">Pushups</option>
+                            </select>
+                        </div>
+                        <div class="shadow p-3 mb-2  rounded" style="margin: 2px; ">
+                            <label for="accessory2">Accessory:</label>
+                            <select class="rounded" name="accessory2">
+                                <option value="curl">Curl</option>
+                                <option value="overhead_press">Overhead Press</option>
+                                <option value="Pullups">Pullups</option>
+                                <option value="Bent_over_rows">Bent Over Rows</option>
+                                <option value="Pushups">Pushups</option>
+                            </select>
+                        </div>
+                        <div class="shadow p-3 mb-2  rounded" style="margin: 2px; ">
+                            <label for="accessory3">Accessory:</label>
+                            <select class="rounded" name="accessory3">
+                                <option value="curl">Curl</option>
+                                <option value="overhead_press">Overhead Press</option>
+                                <option value="Pullups">Pullups</option>
+                                <option value="Bent_over_rows">Bent Over Rows</option>
+                                <option value="Pushups">Pushups</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="text-center">

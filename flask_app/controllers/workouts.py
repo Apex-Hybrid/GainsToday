@@ -54,7 +54,7 @@ def update_workout():
     if 'user_id' not in session:
         return redirect('/logout')
     if not Workout.validate_workout(request.form):
-        return redirect('/new/workout')
+        return redirect('/update/workout')
     data = {
         "name": request.form["name"],
         "description": request.form["description"],
