@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
+    <link rel="stylesheet" href="static/css/style.scss">
+    <link rel="stylesheet" href="static/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
 
 
 </head>
@@ -16,93 +19,99 @@
     <div class="bg-image "
         style=" background-size: cover; background-repeat: no-repeat; background-image: url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'); height: 100vh;">
 
-        <div class="  container text-center  ">
-            <header class=" display-1 text-center text-light " style="margin-bottom: 100px;">Track Your Gains!</header>
-            <div class="container d-flex justify-content-around ">
+        <div class="container">
+            <div class="row align-items-center flex-wrap">
+                <header class=" display-1 text-center text-light " style="margin-bottom: 100px;">Track Your Gains!
+                </header>
+                <div class="container d-flex justify-content-around ">
 
-                <form action="/register" method="post" class="  ">
-                    {% with messages = get_flashed_messages(category_filter=['register']) %}
-                    {% if messages %}
-                    <div class="alert alert-danger" role="alert">
-                        <strong>Flash AHHHHHHH!!!!</strong>
-                        {% for message in messages %}
-                        <p>{{message}}</p>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    {% endwith %}
+                    <form action="/register" method="post" class="  ">
+                        {% with messages = get_flashed_messages(category_filter=['register']) %}
+                        {% if messages %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Flash AHHHHHHH!!!!</strong>
+                            {% for message in messages %}
+                            <p>{{message}}</p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% endwith %}
 
 
-                    <h2 class="text-warning">Register</h2>
-                    <div class="text-light">
-                        <div>
-                            <label>First Name:
-                                <input type="text" name="first_name" class="form-control">
-                            </label>
+                        <h2 class="text-warning">Register</h2>
+                        <div class="text-light">
+                            <div>
+                                <label>First Name:
+                                    <input type="text" name="first_name" class="form-control">
+                                </label>
+                            </div>
+                            <div>
+                                <label>Last Name:
+                                    <input type="text" name="last_name" class="form-control">
+                                </label>
+                            </div>
+                            <div>
+                                <label>Email:
+                                    <input type="text" name="email" class="form-control">
+                                </label>
+                            </div>
+                            <div>
+                                <label>Password:
+                                    <input type="password" name="password" class="form-control">
+                                </label>
+                            </div>
+                            <div>
+                                <label>Confirm Password:
+                                    <input type="password" name="confirm" class="form-control">
+                                </label>
+                            </div>
                         </div>
-                        <div>
-                            <label>Last Name:
-                                <input type="text" name="last_name" class="form-control">
-                            </label>
+                        <input type="submit" value="Register" class="btn btn-hover btn-outline-warning">
+                    </form>
+
+
+
+                    <form action="/login" method="post" class="  col-2 ">
+                        <h2 class="text-warning">Login</h2>
+                        {% with messages = get_flashed_messages(category_filter=['login']) %}
+                        {% if messages %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Flash AHHHHHHH!!!!</strong>
+                            {% for message in messages %}
+                            <p>{{message}}</p>
+                            {% endfor %}
                         </div>
-                        <div>
-                            <label>Email:
-                                <input type="text" name="email" class="form-control">
-                            </label>
-                        </div>
-                        <div>
-                            <label>Password:
+                        {% endif %}
+                        {% endwith %}
+                        <div class="text-light">
+                            <div>
+                                <label>Email:
+                                    <input type="text" name="email" class="form-control">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password:</label>
                                 <input type="password" name="password" class="form-control">
-                            </label>
+                            </div>
                         </div>
-                        <div>
-                            <label>Confirm Password:
-                                <input type="password" name="confirm" class="form-control">
-                            </label>
-                        </div>
-                    </div>
-                    <input type="submit" value="Register" class="btn btn-hover btn-outline-warning">
-                </form>
 
-                <form action="/login" method="post" class="  col-2 ">
-                    <h2 class="text-warning">Login</h2>
-                    {% with messages = get_flashed_messages(category_filter=['login']) %}
-                    {% if messages %}
-                    <div class="alert alert-danger" role="alert">
-                        <strong>Flash AHHHHHHH!!!!</strong>
-                        {% for message in messages %}
-                        <p>{{message}}</p>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    {% endwith %}
-                    <div class="text-light">
-                        <div>
-                            <label>Email:
-                                <input type="text" name="email" class="form-control">
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password:</label>
-                            <input type="password" name="password" class="form-control">
-                        </div>
-                    </div>
 
-                    <input type="submit" value="Login" class="btn btn-hover btn-outline-warning">
+                        <input type="submit" value="Login" class="btn btn-hover btn-outline-warning">
+                </div>
+                <p class="display-6 text-light " style="margin-top: 120px;">
+                    Whether you want to keep track of your own workouts or you want to pick up some others workouts,
+                    LETS
+                    GET
+                    IT!
+                </p>
             </div>
-            <p class="display-6 text-light " style="margin-top: 120px;">
-                Whether you want to keep track of your own workouts or you want to pick up some others workouts, LETS
-                GET
-                IT!
-            </p>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
 
-
+        <script src="/static/script.js"></script>
 
 </body>
 

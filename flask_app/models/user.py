@@ -59,7 +59,6 @@ class User:
                 'accessory': row['accessory'],
                 'accessory2': row['accessory2'],
                 'accessory3': row['accessory3'],
-
                 'user_id': row['user_id'],
                 'created_at': row['workouts.created_at'],
                 'updated_at': row['workouts.updated_at']
