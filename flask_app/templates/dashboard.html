@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link rel="stylesheet" href="static/css/style.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- bootstrap cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css">
+
+    <!-- custom css file link  -->
     <link rel="stylesheet" href="static/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <title>Document</title>
 </head>
@@ -54,13 +56,15 @@
                             <td>{{workout.name}}</td>
                             <td> {{workout.description}}</td>
 
-
-                            <td>
-                                <a href="/workout/{{workout.id}}">View Instructions</a>
-                                {% if workout.user_id == session.user_id %}
-                                <a href="/edit/workout/{{workout.id}}">Edit</a>
-                                <a href="/destroy/workout/{{workout.id}}">Delete</a>
-                                {% endif %}
+                            <td class="btn btn-secondary dropdown-toggle">
+                                <div class="dropdown-menu">
+                                    <a class='drop-item' href="/workout/{{workout.id}}">View Instructions</a>
+                                    {% if workout.user_id == session.user_id %}
+                                    <a class='drop-item' href="/edit/workout/{{workout.id}}">Edit</a>
+                                    <a class='drop-item' href="/destroy/workout/{{workout.id}}">Delete</a>
+                                    {% endif %}
+                                </div>
+                            </td>
                             </td>
 
                         </tr>
